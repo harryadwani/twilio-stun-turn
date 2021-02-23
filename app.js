@@ -1,16 +1,16 @@
 'use strict';
 var express = require('express');
 var cors = require('express-cors')
-var twilio = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
+var twilio = require('twilio')('ACebc5ee8a4db127318e10a2b6324edbec','2939494927634b1b04e399eaff7dfeac');
 
 
 var app = express();
 
 
-// app.use(cors({
-//   allowedOrigins: [process.env.ALLOWED_ORIGIN],
-//   methods: ['GET']
-// }));
+app.use(cors({
+  allowedOrigins: ['*.github.com', '*.google.com', '*.herokuapp.com],
+  methods: ['GET']
+}));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", *); // update to match the domain you will make the request from
