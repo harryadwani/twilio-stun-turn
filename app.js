@@ -1,19 +1,19 @@
 'use strict';
 var express = require('express');
 var cors = require('express-cors')
-var twilio = require('twilio')('ACebc5ee8a4db127318e10a2b6324edbec','2939494927634b1b04e399eaff7dfeac');
+var twilio = require('twilio')('ACebc5ee8a4db127318e10a2b6324edbec','2d10543ded83a1772318a9d380f85d15');
 
 
 var app = express();
 
 
-app.use(cors({
-  allowedOrigins: ['*.github.com', '*.google.com', '*.herokuapp.com],
-  methods: ['GET']
-}));
+// app.use(cors({
+//   allowedOrigins: ['*.github.com', '*.google.com', '*.herokuapp.com],
+//   methods: ['GET']
+// }));
 
 app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", *); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
