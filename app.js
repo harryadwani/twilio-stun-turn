@@ -7,10 +7,16 @@ var twilio = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILI
 var app = express();
 
 
-app.use(cors({
-  allowedOrigins: [process.env.ALLOWED_ORIGIN],
-  methods: ['GET']
-}));
+// app.use(cors({
+//   allowedOrigins: [process.env.ALLOWED_ORIGIN],
+//   methods: ['GET']
+// }));
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", *); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 
 var cachedToken = null;
