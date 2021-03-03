@@ -1,7 +1,7 @@
 'use strict';
 var express = require('express');
 var cors = require('express-cors')
-var twilio = require('twilio')('ACebc5ee8a4db127318e10a2b6324edbec','2d10543ded83a1772318a9d380f85d15');
+var twilio = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN);
 
 
 var app = express();
